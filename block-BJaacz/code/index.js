@@ -252,17 +252,17 @@ function isGradeC(obj) {
       { name: 'Liam Smith', age: 20 },
     ];
 */
-function filterAdult(arr, cb) {
+function filterAdult(arr) {
   let finalArr = [];
   for (let obj of arr) {
-    if (cb(obj)) {
+    if (isAdult(obj)) {
       finalArr.push(obj);
     }
   }
   return finalArr;
 }
 
-filterAdult(people, isAdult);
+filterAdult(people);
 /*
   Create a function named filterMale which accepts:
     - an array of objects
@@ -281,17 +281,17 @@ filterAdult(people, isAdult);
       { name: 'Donald', grade: 5, sex: 'M' },
     ];
 */
-function filterMale(arr, cb) {
+function filterMale(arr) {
   let finalArr = [];
   for (let obj of arr) {
-    if (cb(obj)) {
+    if (isMale(obj)) {
       finalArr.push(obj);
     }
   }
   return finalArr;
 }
 
-filterMale(grades, isMale);
+filterMale(grades);
 /*
   Create a function named filterFemale which accepts:
     - an array of objects
@@ -310,17 +310,17 @@ filterMale(grades, isMale);
       { name: 'Jane', grade: 9, sex: 'F' },
     ]
 */
-function filterFemale(arr, cb) {
+function filterFemale(arr) {
   let finalArr = [];
   for (let obj of arr) {
-    if (cb(obj)) {
+    if (isFemale(obj)) {
       finalArr.push(obj);
     }
   }
   return finalArr;
 }
 
-filterFemale(grades, isFemale);
+filterFemale(grades);
 /*
   Create a function named filterGradeA which accepts:
     - an array of objects
@@ -340,17 +340,17 @@ filterFemale(grades, isFemale);
       { name: 'Jane', grade: 9, sex: 'F' },
     ]
 */
-function filterGradeA(arr, cb) {
+function filterGradeA(arr) {
   let finalArr = [];
   for (let obj of arr) {
-    if (cb(obj)) {
+    if (isGradeA(obj)) {
       finalArr.push(obj);
     }
   }
   return finalArr;
 }
 
-filterGradeA(grades, isGradeA);
+filterGradeA(grades);
 /*
   Create a function named filterGradeB which accepts:
     - an array of objects
@@ -369,17 +369,17 @@ filterGradeA(grades, isGradeA);
      { name: 'Jane', grade: 9, sex: 'F' },
     ]
 */
-function filterGradeB(arr, cb) {
+function filterGradeB(arr) {
   let finalArr = [];
   for (let obj of arr) {
-    if (cb(obj)) {
+    if (isGradeB(obj)) {
       finalArr.push(obj);
     }
   }
   return finalArr;
 }
 
-filterGradeB(grades, isGradeB);
+filterGradeB(grades);
 /*
   Create a function named filterGradeC which accepts:
     - an array of objects
@@ -397,17 +397,17 @@ filterGradeB(grades, isGradeB);
       { name: 'Donald', grade: 5, sex: 'M' },
     ]
 */
-function filterGradeC(arr, cb) {
+function filterGradeC(arr) {
   let finalArr = [];
   for (let obj of arr) {
-    if (cb(obj)) {
+    if (isGradeC(obj)) {
       finalArr.push(obj);
     }
   }
   return finalArr;
 }
 
-filterGradeC(grades, isGradeC);
+filterGradeC(grades);
 /*
 We are repeating lots of code in above functions like filterGradeC, filterGradeB, filterGradeA, filterAdult. We will fix
 this by making a higher order function named filter. Now using one function filter we will be able to filter anything we want.
